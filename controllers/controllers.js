@@ -1,4 +1,3 @@
-const Model = require("../models/model.js");
 const querystring = require("querystring");
 const request = require("request");
 
@@ -14,7 +13,8 @@ var redirect_uri = process.env.REDIRECT_URI; // Your redirect uri
  */
 var generateRandomString = function (length) {
   var text = "";
-  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  var possible =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
   for (var i = 0; i < length; i++) {
     text += possible.charAt(Math.floor(Math.random() * possible.length));
@@ -67,7 +67,8 @@ exports.callback = (req, res) => {
       },
       headers: {
         Authorization:
-          "Basic " + new Buffer(client_id + ":" + client_secret).toString("base64"),
+          "Basic " +
+          new Buffer(client_id + ":" + client_secret).toString("base64"),
       },
       json: true,
     };
