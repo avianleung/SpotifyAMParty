@@ -1,0 +1,10 @@
+import axios from "axios";
+
+export default axios.create({
+  withCredentials: true,
+  baseURL: "http://localhost:8080/",
+  headers: {
+    "Content-type": "application/json",
+    "Access-Control-Allow-Origin": "*",
+  },
+});
